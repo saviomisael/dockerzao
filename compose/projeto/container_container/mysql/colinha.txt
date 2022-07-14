@@ -1,0 +1,2 @@
+docker build -t mysqlapinetwork .
+docker run -d -p 3306:3306 --name mysqlapicontainer --rm --network flask_network -e MYSQL_ALLOW_EMPTY_PASSWORD="yes" mysqlapinetwork

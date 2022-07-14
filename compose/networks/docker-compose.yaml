@@ -1,0 +1,30 @@
+version: '3.8'
+
+services: # Aqui declaro meus containers
+  db: # Nome do container do msql
+    image: mysql:latest
+    volumes:
+      - db_data:/var/lib/mysql
+    restart: always # O docker compose irá executar sempre na última versão do arquivo do docker compose
+    env_file:
+      - ./config/db.env
+    networks: # Declaro para o container qual a rede conectar
+      - backend
+
+  wordpress:
+    depends_on: # Containers que o wordpress depende
+      - db
+    image: wordpress:latest
+    ports:
+      - "8000:80" #meupc:container
+    restart: always
+    env_file:
+    - ./config/wp.env
+    networks:
+      - backend
+
+volumes: # Se quiser reutilizar o volume em múltiplos serviços (containers) deve declará-lo aqui
+  db_data: {}
+networks: # Declara a rede
+  backend:
+    driver: bridge

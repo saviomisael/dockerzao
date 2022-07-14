@@ -1,0 +1,32 @@
+# Arquivo lido com python lib pyyaml
+nome: "Savio"
+idade: 22 # Esta é minha idade
+inteiro: 22
+float: 22.5
+string_sem_aspas: Digite um texto aqui
+texto_com_aspas: "Outro texto válido"
+nulo_1: ~
+nulo_2: null
+booleano_1: True
+booleano_2: On
+booleano_3: False
+booleano_4: Off
+texto_3: "True"
+array_1: [1, 2, 3, 4, 5]
+array_2:
+- 1
+- 2
+- 3
+- 4
+array_3: [1, 2, 3, "4", 5.5]
+obj_1: { a: 1, b: 2, c: 3 }
+
+obj_2:
+  chave_a: 1
+  chave_b: 2
+  objeto_interno:
+    x: 2
+# Isto é um comentário
+objeto:
+  versao: 2
+  arquivo: "teste.txt"
